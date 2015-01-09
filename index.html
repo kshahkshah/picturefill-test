@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Picture Fill Test</title>
+    <script>
+      // Picture element HTML5 shiv
+      document.createElement( "picture" );
+    </script>
+    <script src="picturefill.min.js" async></script>
+  </head>
+  <body>
+    <h1>Photo by Philip Lorca-Dicorcia</h1>
+
+    For this technique you really need to <a href="http://scottjehl.github.io/picturefill/#getting-started">read this</a>.
+
+    <h2>img with srcset</h2>
+
+    <img sizes="100vw" srcset="lorca-dicorcia-small.jpg 320w, lorca-dicorcia-medium.jpg 480w, lorca-dicorcia-large.jpg 640w, lorca-dicorcia-huge.jpg 940w" alt="New York">
+
+    <h2>picture tag</h2>
+
+    <picture>
+      <!--[if IE 9]><video style="display: none;"><![endif]-->
+      <source srcset="lorca-dicorcia-huge.jpg" media="(min-width: 960px)">
+      <source srcset="lorca-dicorcia-large.jpg" media="(min-width: 768px)">
+      <source srcset="lorca-dicorcia-medium.jpg" media="(min-width: 480px)">
+      <source srcset="lorca-dicorcia-small.jpg">
+      <!--[if IE 9]></video><![endif]-->
+      <img srcset="lorca-dicorcia-small.jpg" alt="New York">
+    </picture>
+
+  </body>
+</html>
